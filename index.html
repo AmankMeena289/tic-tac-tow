@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Toe</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-white flex items-center justify-center p-4 font-sans">
+<canvas id="confetti" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+<main class="w-full max-w-md">
+  <h1 class="title text-center text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">Tic <span class="text-pink-400">Tac</span> <span class="text-cyan-300">Toe</span></h1>
+
+  <!-- Scoreboard -->
+  <div class="grid grid-cols-3 gap-3 mb-6 text-center">
+    <div id="score-X" class="score-card rounded-xl bg-white/10 backdrop-blur p-3 border border-white/10">
+      <div class="text-xs uppercase opacity-70">Player X</div>
+      <div id="sx" class="text-3xl font-bold text-pink-400">0</div>
+    </div>
+    <div class="rounded-xl bg-white/10 backdrop-blur p-3 border border-white/10">
+      <div class="text-xs uppercase opacity-70">Draws</div>
+      <div id="sd" class="text-3xl font-bold text-slate-200">0</div>
+    </div>
+    <div id="score-O" class="score-card rounded-xl bg-white/10 backdrop-blur p-3 border border-white/10">
+      <div class="text-xs uppercase opacity-70">Player O</div>
+      <div id="so" class="text-3xl font-bold text-cyan-300">0</div>
+    </div>
+  </div>
+
+  <p id="status" class="text-center text-lg font-semibold h-8 mb-4"></p>
+
+  <!-- Board -->
+  <div class="relative">
+    <div id="board" class="grid grid-cols-3 gap-3 sm:gap-4"></div>
+    <svg id="line-svg" class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line id="win-line" x1="0" y1="0" x2="0" y2="0" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0"/>
+    </svg>
+  </div>
+
+  <div class="flex gap-3 mt-6">
+    <button id="restart" class="btn flex-1 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 font-bold shadow-lg">New Round</button>
+    <button id="reset" class="btn flex-1 py-3 rounded-xl bg-white/10 border border-white/20 font-bold">Reset Scores</button>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
